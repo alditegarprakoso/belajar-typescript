@@ -97,7 +97,7 @@ interface DosenPembimbing {
   mataKuliah: string;
 }
 
-type Skripsi =  Mahasiswa & DosenPembimbing;
+type Skripsi = Mahasiswa & DosenPembimbing;
 
 const skripsiAldi: Skripsi = {
   nama: "Aldi Tegar Prakoso",
@@ -108,4 +108,33 @@ const skripsiAldi: Skripsi = {
 };
 
 console.log("Data skripsi Aldi: ", skripsiAldi);
+console.log("\n");
+
+// Enum
+enum StatusMahasiswa {
+  Aktif = "Aktif",
+  Cuti = "Cuti",
+  Lulus = "Lulus",
+}
+
+function getStatusMahasiswa(namaMahasiswa: string, status: string): void {
+  if (status === StatusMahasiswa.Aktif) {
+    console.log(
+      `${namaMahasiswa} saat ini berstatus ${StatusMahasiswa.Aktif}.`
+    );
+  } else if (status === StatusMahasiswa.Cuti) {
+    console.log(`${namaMahasiswa} saat ini berstatus ${StatusMahasiswa.Cuti}.`);
+  } else if (status === StatusMahasiswa.Lulus) {
+    console.log(
+      `${namaMahasiswa} saat ini berstatus ${StatusMahasiswa.Lulus}.`
+    );
+  } else {
+    console.log(`${namaMahasiswa} status tidak dikenali.`);
+  }
+}
+
+getStatusMahasiswa("Aldi Tegar Prakoso", "Aktif");
+getStatusMahasiswa("Aldi Tegar Prakoso", "Cuti");
+getStatusMahasiswa("Aldi Tegar Prakoso", "Lulus");
+getStatusMahasiswa("Aldi Tegar Prakoso", "Dropout");
 console.log("\n");
