@@ -58,3 +58,52 @@ literal = "Budi";
 console.log(literal);
 literal = "Citra";
 console.log(literal);
+
+// Enum
+// Enum adalah tipe data yang memungkinkan kita untuk mendeklarasikan sekumpulan nilai yang terkaitan satu sama lain
+enum Color {
+    Red = "Merah",
+    Green = "Hijau",
+    Blue = "Biru"
+}
+let favoriteColor: Color = Color.Blue;
+console.log(favoriteColor);
+
+// Const Enum
+// Const enum adalah enum yang nilainya sudah ditentukan pada saat kompilasi, sehingga tidak perlu dibuatkan objek enum pada saat runtime
+// Ini membuat const enum lebih efisien dalam penggunaan memori dan performa
+const enum Direction {
+    Up = "Up",
+    Down = "Down",
+    Left = "Left",
+    Right = "Right"
+}
+let direction: Direction = Direction.Up;
+console.log(direction);
+
+// Unknown Type
+// Unknown type mirip dengan any, tetapi lebih aman karena kita harus melakukan pengecekan tipe data sebelum menggunakannya
+let unknownValue: unknown;
+unknownValue = 42;
+console.log(unknownValue);
+
+unknownValue = true;
+console.log(unknownValue);
+
+unknownValue = "Hello World";
+console.log(unknownValue);
+
+if (typeof unknownValue === "string") {
+    unknownValue.toUpperCase(); // Aman untuk dipanggil karena sudah dicek tipe datanya
+    console.log(unknownValue.toUpperCase());
+}
+
+// Type Assertions
+// Type assertions memungkinkan kita untuk memberi tahu TypeScript bahwa kita yakin tipe data dari suatu variabel
+let anyValue: any = "Hello World";
+// Kita bisa menggunakan type assertions untuk mengubah tipe data dari any menjadi string
+// Ada dua cara untuk melakukan type assertions: menggunakan as atau menggunakan tanda kurung sudut <>
+let stringLength: number = (anyValue as string).length;
+console.log(stringLength);
+let anotherStringLength: number = (<string>anyValue).length;
+console.log(anotherStringLength);
