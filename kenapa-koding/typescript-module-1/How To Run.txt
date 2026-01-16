@@ -1,0 +1,7 @@
+Pertama Jalankan Perintah :
+
+"tsc" untuk mengcompile/build ke folder dist
+
+Untuk menjalankan js nya tinggal jalankan node seperti biasa :
+
+"node dist/js/main.js"
